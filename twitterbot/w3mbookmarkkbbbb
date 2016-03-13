@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Register to my bookmark</title>
+</head>
+<body>
+<h1>Register to my bookmark</h1>
+<form method=post action="file:///$LIB/w3mbookmark">
+<input type=hidden name=mode value=register>
+<input type=hidden name=bmark value="/home/johnlindsay/.w3m/bookmark.html">
+<input type=hidden name=cookie value="932986976@internalapps2">
+<table cellpadding=0>
+<tr><td>New&nbsp;Section:<td><input type=text name=newsection size=60>
+<tr><td>URL:<td><input type=text name=url value="https://twitter.com/login?redirect_after_login=%2Fhome" size=60>
+<tr><td>Title:<td><input type=text name=title value="Login on Twitter" size=60>
+<tr><td><input type=submit value="ADD">
+</table>
+</form>
+</body>
+</html>
