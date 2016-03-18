@@ -6,23 +6,23 @@ from time import sleep
 from secrets import con_key, con_secret
 
 #my_twitter_creds = os.path.expanduser('~/.twitter_creds')
-my_twitter_creds2 = ('/home/johnlindsay/twitter_credsinwage2')
+my_twitter_creds2 = ('/home/Ayda_Twitter/twitter_credsinwage2')
 if not os.path.exists(my_twitter_creds2):
-    oauth_dance('test3_joelinzy', con_key, con_secret, my_twitter_creds2)
+    oauth_dance('managemick', con_key, con_secret, my_twitter_creds2)
 
 oauth_token, oauth_secret = read_token_file(my_twitter_creds2)
 
 twitter = Twitter(auth=OAuth(oauth_token, oauth_secret, con_key, con_secret))
 
 
-openfile = open('/home/johnlindsay/copylist.txt')
+openfile = open('/home/Ayda_Twitter/copylist.txt')
 content = openfile.read()
 openfile.close()
 
 split = content.splitlines()
 touse = ''
 if len(split) >0:
-    openfile = open('/home/johnlindsay/copylist.txt','w+')
+    openfile = open('/home/Ayda_Twitter/copylist.txt','w+')
     touse = split[0]
     for index, line in enumerate(split):
         if index > 0:
