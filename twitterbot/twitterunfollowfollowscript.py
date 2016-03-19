@@ -29,7 +29,7 @@ if len(split) >0:
             openfile.writelines(line+'\n')
     openfile.writelines(touse)
     openfile.close()
-print touse
+print 'Account: ' + touse + 'will be followed'
 
 
 parser = ArgumentParser(
@@ -45,14 +45,14 @@ copyaccount = touse
 
 #delete all people not following back
 if myaccount and copyaccount:
-    print myaccount
+    #print myaccount
     #people following
     followingme = follow(twitter, myaccount, False)
     #print lookup(twitter, userids)
     #followers
     myfollowers = follow(twitter, myaccount, True)
     #print lookup(twitter, followers)
-
+	print 'These people are following me: ' + followingme
     tounfollow = []
     for id in followingme:
         if id not in myfollowers:
