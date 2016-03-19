@@ -52,7 +52,8 @@ if myaccount and copyaccount:
     #followers
     myfollowers = follow(twitter, myaccount, True)
     #print lookup(twitter, followers)
-	print 'These people are following me: ' + followingme
+	print 'These people are following me: ' 
+	print followingme
     tounfollow = []
     for id in followingme:
         if id not in myfollowers:
