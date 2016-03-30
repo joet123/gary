@@ -65,12 +65,12 @@ if myaccount and copyaccount:
     print tounfollow
     for k, v in lookup(twitter, tounfollow).iteritems():
         print v
-        sleep(20)
+        sleep(50)
         try:
             twitter.friendships.destroy(screen_name=v)
         except Exception as (e):
             print e
-sleep(1000)
+sleep(3000)
 #copy followers of copyaccount
 if myaccount and copyaccount:
     print 'This account will be followed' + copyaccount
@@ -78,7 +78,7 @@ if myaccount and copyaccount:
     #followers
     copyfollowers = follow(twitter, copyaccount, True)
 
-#    sleep(1000)
+    sleep(1000)
     tofollow = []
     for id in copyfollowers:
         if id not in myfollowers and id not in followingme:
@@ -88,7 +88,7 @@ if myaccount and copyaccount:
     #uncomment below when u run
     for count, (k, v) in enumerate(lookup(twitter, tofollow).iteritems()):
         if count < 400:
-            sleep(100)
+            sleep(200)
             try:
                 twitter.friendships.create(screen_name=v)
                 print v + ' was followed'
