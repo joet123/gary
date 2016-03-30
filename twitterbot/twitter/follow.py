@@ -131,8 +131,8 @@ def follow(twitter, screen_name, followers=True):
     fail = Fail()
     while True:
         try:
-            portion, cursor = follow_portion(twitter, screen_name, cursor,
-                                             followers)
+            portion, cursor = follow_portion(twitter, screen_name, cursor, followers)
+            cursor = 0
         except TwitterError as e:
             if e.e.code == 401:
                 reason = ("follow%s of that user are protected"
