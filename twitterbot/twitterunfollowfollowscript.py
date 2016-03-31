@@ -4,6 +4,7 @@ from twitter.cmdline import *
 from argparse import ArgumentParser
 from time import sleep
 from secrets import con_key, con_secret
+from random import randint
 
 #my_twitter_creds = os.path.expanduser('~/.twitter_creds')
 my_twitter_creds2 = ('/home/ubuntu/Ayda_Twitter/twitterbot/twitter_credsinwage2')
@@ -65,12 +66,12 @@ if myaccount and copyaccount:
     print tounfollow
     for k, v in lookup(twitter, tounfollow).iteritems():
         print v
-        sleep(50)
+        sleep(randint(5,25))
         try:
             twitter.friendships.destroy(screen_name=v)
         except Exception as (e):
             print e
-sleep(3000)
+sleep(randint(1000,2000))
 #copy followers of copyaccount
 if myaccount and copyaccount:
     print 'This account will be followed: ' + copyaccount
@@ -78,7 +79,7 @@ if myaccount and copyaccount:
     #followers
     copyfollowers = follow(twitter, copyaccount, True)
 
-    sleep(1000)
+    sleep(randint(500,1200))
     tofollow = []
     for id in copyfollowers:
         if id not in myfollowers and id not in followingme:
@@ -88,7 +89,7 @@ if myaccount and copyaccount:
     #uncomment below when u run
     for count, (k, v) in enumerate(lookup(twitter, tofollow).iteritems()):
         if count < 400:
-            sleep(200)
+            sleep(randint(50,250))
             try:
                 twitter.friendships.create(screen_name=v)
                 print 'Now Following: ' + v
