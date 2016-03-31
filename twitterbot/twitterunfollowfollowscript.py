@@ -61,7 +61,7 @@ if myaccount and copyaccount:
     print len(tounfollow)
     #print lookup(twitter, tounfollow)
     #uncomment below when u run
-    print 'These people will be unfollowed'
+    print 'These people will be unfollowed '
     print tounfollow
     for k, v in lookup(twitter, tounfollow).iteritems():
         print v
@@ -73,7 +73,7 @@ if myaccount and copyaccount:
 sleep(3000)
 #copy followers of copyaccount
 if myaccount and copyaccount:
-    print 'This account will be followed' + copyaccount
+    print 'This account will be followed: ' + copyaccount
 
     #followers
     copyfollowers = follow(twitter, copyaccount, True)
@@ -91,7 +91,7 @@ if myaccount and copyaccount:
             sleep(200)
             try:
                 twitter.friendships.create(screen_name=v)
-                print v + ' was followed'
+                print 'Now Following: ' + v
             except Exception as (e):
                 print e
                 if 'unable to follow more people at this time.' in str(e) or 'cannot perform write actions' in str(e):
